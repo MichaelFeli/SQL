@@ -1,0 +1,22 @@
+--list of items being sold at my clothing store
+/** clothing_store:
+shirts (6)
+pants (4)
+undergarments (5)
+socks (10)
+shoes (5) **/
+
+--create a clothing store database
+CREATE TABLE clothing_store (id INTEGER PRIMARY KEY, clothing TEXT, quantity INTEGER, aisle INTEGER, price INTEGER);
+INSERT INTO clothing_store VALUES (1, "tops", 6, 1, 4);
+INSERT INTO clothing_store VALUES (2, "bottoms", 4, 2, 5);
+INSERT INTO clothing_store VALUES (3, "undergarments", 5, 3, 3);
+INSERT INTO clothing_store VALUES (4, "socks", 10, 3, 1);
+INSERT INTO clothing_store VALUES (5, "shoes", 5, 4, 10);
+INSERT INTO clothing_store VALUES (6, "dresses", 8, 6, 7);
+
+--display the database ordered by price.
+SELECT * FROM clothing_store ORDER BY price;
+
+--display the most expensive item in the store and how many items are being sold
+SELECT MAX(price), SUM(quantity) FROM clothing_store;
