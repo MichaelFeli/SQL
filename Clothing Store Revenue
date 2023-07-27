@@ -7,16 +7,16 @@ socks (10)
 shoes (5) **/
 
 --create a clothing store database
-CREATE TABLE clothing_store (id INTEGER PRIMARY KEY, clothing TEXT, quantity INTEGER, aisle INTEGER, price INTEGER);
-INSERT INTO clothing_store VALUES (1, "tops", 6, 1, 4);
-INSERT INTO clothing_store VALUES (2, "bottoms", 4, 2, 5);
-INSERT INTO clothing_store VALUES (3, "undergarments", 5, 3, 3);
-INSERT INTO clothing_store VALUES (4, "socks", 10, 3, 1);
-INSERT INTO clothing_store VALUES (5, "shoes", 5, 4, 10);
-INSERT INTO clothing_store VALUES (6, "dresses", 8, 6, 7);
+CREATE TABLE clothing_store (id INTEGER PRIMARY KEY, clothing TEXT, rating INTEGER, aisle INTEGER, price INTEGER);
+INSERT INTO clothing_store VALUES (1, "tops", 9.4, 1, 4);
+INSERT INTO clothing_store VALUES (2, "bottoms", 8.9, 2, 5);
+INSERT INTO clothing_store VALUES (3, "undergarments", 10.0, 3, 3);
+INSERT INTO clothing_store VALUES (4, "socks", 10.0, 3, 1);
+INSERT INTO clothing_store VALUES (5, "shoes", 7.9, 4, 10);
+INSERT INTO clothing_store VALUES (6, "dresses", 7.7, 6, 7);
 
---display the database ordered by price.
-SELECT * FROM clothing_store ORDER BY price;
+--display the database ordered by rating
+SELECT * FROM clothing_store ORDER BY rating desc;
 
---display the most expensive item in the store and how many items are being sold
-SELECT MAX(price), SUM(quantity) FROM clothing_store;
+--display the store's average rating for all clothing from customers of all of our products
+SELECT AVG(rating)FROM clothing_store;
